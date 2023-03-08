@@ -1,0 +1,8 @@
+<div>
+  <button id="siteNavButton" class="block text-xl font-bold lg:hidden">Menu</button>
+  <nav id="siteNav" class="hidden p-2 lg:flex lg:gap-4 lg:p-0">
+    {{#foreach navigation}}
+      <a class="block text-xl font-bold {{#if current}} text-neutral-400 {{/if}}" href="{{url absolute="true"}}">{{label}}</a>
+    {{/foreach}}
+  </nav>
+</div>

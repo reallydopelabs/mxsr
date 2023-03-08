@@ -1,0 +1,38 @@
+<article class="relative w-full aspect-w-4 aspect-h-5 bg-brand">
+    <a href="{{url}}" class="group flex flex-col justify-end">
+      {{#if feature_image}}
+        <div class="absolute z-0 top-0 left-0 w-full h-full">
+          <img class="w-full h-full object-cover transition-opacity duration-300 opacity-100 group-hover:opacity-70"
+                    srcset="{{img_url feature_image size="s"}} 300w,
+                            {{img_url feature_image size="m"}} 600w,
+                            {{img_url feature_image size="l"}} 1000w,
+                            {{img_url feature_image size="xl"}} 2000w"
+                    sizes="(max-width: 1000px) 400px, 700px"
+                    src="{{img_url feature_image size="m"}}"
+                    alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                />
+          </div>
+      {{/if}}
+      <div class="relative z-10 pt-24 lg:pb-4">
+        <div class="absolute top-0 left-0 w-full h-full z-0 bg-gradient-to-t from-black to-transparent"></div>
+        <div class="relative z-10 flex flex-col items-start justify-between container py-4 text-white">
+          <div class="w-full">
+            <h1 class="font-bold text-2xl uppercase tracking-tighter xl:text-6xl xl:mb-12">
+              {{title}}
+            </h1>
+            <div class="mt-2 font-bold text-base">{{authors autolink="false"}}
+              &mdash;
+              <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM YYYY"}}</time>
+              ({{reading_time}})</div>
+            </div>
+
+          <div class="md:flex md:items-end md:justify-between w-full">
+            <div class="">
+              {{tags autolink="false"}}
+            </div>
+            <div>Read &#10149;</div>
+          </div>
+        </div>
+      </div>
+    </a>
+</article>

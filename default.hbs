@@ -1,0 +1,30 @@
+<html lang="{{@site.locale}}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{meta_title}}</title>
+
+    <link rel="stylesheet" type="text/css" href="{{asset 'built/main.css'}}" />
+
+    {{ghost_head}}
+  </head>
+  <body class="{{body_class}} bg-neutral-300">
+    <div class="mx-auto max-w-6xl bg-neutral-50 text-neutral-900 shadow-md shadow-neutral-400">
+      {{>header}}
+
+      {{{body}}}
+    </div>
+
+    {{>footer}}
+
+    {{#is "post, page"}}
+      {{> "pswp"}}
+    {{/is}}
+
+    <script src="{{asset 'built/mxsr.js'}}"></script>
+
+    {{ghost_foot}}
+
+  </body>
+</html>

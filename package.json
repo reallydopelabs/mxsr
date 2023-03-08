@@ -1,0 +1,83 @@
+{
+  "name": "mxsr",
+  "description": "MXSR Ghost theme",
+  "version": "0.0.1",
+  "engines": {
+    "ghost": ">=5.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Really Dope Digital",
+    "email": "hey@thatsrdd.com",
+    "url": "https://thatsrdd.com"
+  },
+  "keywords": [
+    "ghost",
+    "theme",
+    "ghost-theme"
+  ],
+  "screenshots": {
+    "desktop": "assets/screenshot-desktop.png",
+    "mobile": "assets/screenshot-mobile.png"
+  },
+  "scripts": {
+    "dev": "gulp",
+    "zip": "gulp zip",
+    "test": "gscan .",
+    "test:ci": "gscan --fatal --verbose .",
+    "pretest": "gulp build",
+    "preship": "npm test",
+    "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then npm version && git push --follow-tags; else echo \"Uncomitted changes found.\" && exit 1; fi",
+    "postship": "git fetch && gulp release"
+  },
+  "browserslist": [
+    "defaults"
+  ],
+  "config": {
+    "posts_per_page": 12,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 390
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    },
+    "card_assets": true
+  },
+  "devDependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/typography": "^0.5.9",
+    "@tryghost/release-utils": "^0.8.1",
+    "@tryghost/shared-theme-assets": "^2.0.2",
+    "autoprefixer": "^10.4.13",
+    "beeper": "2.1.0",
+    "cssnano": "^5.1.14",
+    "gscan": "^4.36.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-livereload": "^4.0.2",
+    "gulp-postcss": "^9.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.1.0",
+    "inquirer": "8.2.4",
+    "postcss": "^8.4.21",
+    "postcss-easy-import": "^4.0.0",
+    "prettier": "^2.8.3",
+    "prettier-plugin-tailwindcss": "^0.2.2",
+    "pump": "^3.0.0",
+    "tailwindcss": "^3.2.4"
+  }
+}
