@@ -16,16 +16,20 @@ body {
   @apply text-white bg-brand;
 }
 
-.kg-width-wide {
-  grid-column: wide-start / wide-end;
+.kg-card {
+  @apply py-4;
 }
 
-.kg-width-full {
-  grid-column: full-start / full-end;
+.kg-card figcaption {
+  @apply text-sm;
 }
 
 .kg-width-full img {
   width: 100%;
+}
+
+.kg-gallery-image img {
+  height: auto !important;
 }
 
 .pswp {
